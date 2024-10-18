@@ -1,0 +1,25 @@
+import imageio
+import numpy as np
+
+# Baca gambar grayscale
+image = imageio.imread('gambar_grayscale.jpg')
+
+# Tampilkan bentuk gambar
+print(f"Bentuk gambar: {image.shape}")
+
+# Tampilkan nilai piksel pada baris dan kolom tertentu
+baris = 100
+kolom = 200
+nilai_piksel = image[baris, kolom]
+print(f"Nilai piksel pada baris {baris}, kolom {kolom}: {nilai_piksel}")
+
+# Hitung rata-rata nilai piksel
+rata_rata = np.mean(image)
+print(f"Rata-rata nilai piksel: {rata_rata}")
+
+# Buat histogram gambar
+histogram = np.histogram(image, bins=256)
+print(f"Histogram: {histogram}")
+
+# Simpan gambar yang telah diproses
+imageio.imwrite('gambar_diproses.jpg', image)
